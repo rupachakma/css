@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu{
+    width: 100vw;
+    padding: 10px 0;
+    background-color: darkblue;
+    position: relative;
+    z-index: 99;
+}
+.menu::after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 140px;
+    border-inline: 4px solid rgb(222, 201, 201);
+    filter: blur(3px);
+    top: 10px;
+    left: 145px;
+    border-radius: 50%;
+    padding: 20px 0;
+    background-color: rgb(11, 11, 135);
+    z-index: -1;
+}
+.menu-item{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.menu-link a{
+    text-decoration: none;
+    color: white;
+    
+}
+.menu-link a:hover{
+    text-decoration: underline;
+    color: rgb(239, 239, 243);
+    background:none;
+    padding: 30px 0;
+}
+.menu-link .logo{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 55px;
+    font-weight: bold;
+}
+.menu-link{
+    font-size:1.5rem;
+    position: relative;
+}
+.menu .menu-item ul{
+    position: absolute;
+    background-color: rgb(102, 34, 205);
+    list-style: none;
+    width: 240px;
+    top: 54px;
+    left: 0;
+    display: none;
+}
+.menu .menu-item ul a{
+    padding: 10px 20px;
+    display: block;
+}
+.menu-item .menu-link:hover ul{
+    display: block;
+}
+.menu-item .menu-link:hover li a{
+    background: none;
+}
+.menu .menu-item ul a:hover{
+    color: white;
+    background-color: darkblue;
+}
+
+
+
+.card{
+    margin: auto;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    
+}
+.card img{
+    width: 100%;
+    height: 400px;
+    transition: 0.5s;
+}
+.card:hover img{
+    transform: scale(1.2);
+}
+.card-details{
+    width: 100%;
+    height: 500px;
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 999;
+    position: absolute;
+    top: -500px;
+    left: 0;
+    transition: 0.9s;
+}
+.card-details::after{
+    content: "";
+    background-color: darkblue;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+.card-details h2{  
+    margin-top: 120px;
+    font-size: 1.5rem;
+}
+.card-details p{
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.card-details a{
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: rgb(121, 46, 191);
+    color: azure;
+    transition: .5s;
+}
+.card-details a:hover{
+    background-color: rgb(225, 222, 46);
+    color: rgb(21, 27, 27);
+}
+
+.card:hover .card-details{
+    top: 0;
+}
+
+/* attribute selectors */
+
+div[class|='child']{
+    background-color: brown;
+    height: 200px;
+    width: 200px;
+}
+div[class^='child']{
+    background-color: rgb(205, 228, 58);
+    height: 100px;
+    width: 200px;
+    margin: 20px 0;
+}
+div[class$='tion']{
+    background-color: coral;
+    height: 100px;
+    width: 400px;
+    border-radius: 20px 0 20px 0;
+    margin: 10px auto;
+
+}
+.section2{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    border: 5px solid pink;
+}
+div[class*='iv']{
+    background-color: rgb(28, 229, 41);
+    height: 100px;
+    width: 300px;
+    border-radius: 0 20px 0 20px ;
+    margin: 10px auto;
+
+}
+
+.main-parent{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 50px 0;
+}
+.chil{
+    width: 50px;
+    height: 40px;
+    padding-top: 10px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+}
+.chil:first-child{
+    background-color: yellow;
+    color: rgb(11, 10, 10);
+}
+.chil:nth-child(5){
+    background-color: blue;
+}
+.chil:nth-of-type(3){
+    background-color: rgb(222, 26, 209);
+}
+.chil:nth-last-child(5){
+    background-color: rgb(21, 108, 66);
+}
+.chil:nth-child(odd){
+    background-color: rgb(236, 28, 28);
+}
+.chil:nth-child(even){
+    background-color: rgb(115, 16, 202);
+}
+.chil:nth-child(3n+2){
+    background-color: rgb(17, 213, 224);
+}
+/* form */
+form{
+    margin: 50px auto;
+    width: 400px;
+    height: 80px;
+  
+}
+input[type=text],[type=button]{
+    padding: 10px 30px;
+    border: 1px solid gray;
+    float: left;
+}
+input[type=button]{
+    background-color: navy;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: 0.7s;
+}
+input:not(:placeholder-shown)+input[type=button]{
+    display: block;
+}
